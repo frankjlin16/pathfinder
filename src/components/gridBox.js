@@ -52,16 +52,21 @@ const GridBox = () => {
     { id: 48 },
   ]);
 
-	console.log(gridMatrix[1].id);
-
   return (
     <div className="p-3 pt-7 bg-gray-800">
       <div className="grid gap-4 grid-cols-12 p-4 bg-white rounded-md">
-        {gridMatrix.map((grid) => (<div key={grid.id} className="bg-purple-400 bg-opacity-50 rounded-md h-12">
+        {gridMatrix.map((grid) => (
+          <div
+            key={grid.id}
+            className="bg-purple-400 bg-opacity-50 rounded-md h-12"
+          >
             <p className="text-center">{grid.id}</p>
-          </div>)
-          
-        )}
+          </div>
+        ))}
+        {/* TODO: Construct a single reactive grid component.
+				The single reactive grid component need to hold "id" and "node type". 
+				In addition, the component need to update its state on click.
+         */}
       </div>
     </div>
   );
