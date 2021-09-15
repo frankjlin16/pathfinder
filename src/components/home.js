@@ -1,12 +1,12 @@
-import React, { useState } from 'react'
-import Hero from './hero'
+import React, { useState } from "react";
+import Hero from "./hero";
 
 const Home = () => {
-    return (
-        <React.Fragment>
-            <Hero />
-        </React.Fragment>
-    )
-}
+  return (
+    <React.Fragment>
+      <Hero />
+    </React.Fragment>
+  );
+};
 
-export default Home
+export default Home;

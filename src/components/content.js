@@ -1,12 +1,12 @@
-import React, { useState } from 'react'
-import Home from './home'
+import React, { useState } from "react";
+import Home from "./home";
 
 const Content = () => {
-    return (
-        <content>
-            <Home />
-        </content>
-    )
-}
+  return (
+    <content>
+      <Home />
+    </content>
+  );
+};
 
-export default Content
+export default Content;
