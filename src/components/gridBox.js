@@ -55,8 +55,8 @@ const GridBox = () => {
 	console.log(gridMatrix[1].id);
 
   return (
-    <div className="p-4">
-      <div className="grid gap-4 grid-cols-12">
+    <div className="p-3 pt-7 bg-gray-800">
+      <div className="grid gap-4 grid-cols-12 p-4 bg-white rounded-md">
         {gridMatrix.map((grid) => (<div key={grid.id} className="bg-purple-400 bg-opacity-50 rounded-md h-12">
             <p className="text-center">{grid.id}</p>
           </div>)
