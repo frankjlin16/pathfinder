@@ -3,9 +3,9 @@ import Home from "./home";
 
 const Content = () => {
   return (
-    <content>
+    <div>
       <Home />
-    </content>
+    </div>
   );
 };
 
