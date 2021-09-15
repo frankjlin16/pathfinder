@@ -3,9 +3,9 @@ import Home from "./home";
 
 const Content = () => {
   return (
-    <div>
+    <React.Fragment>
       <Home />
-    </div>
+    </React.Fragment>
   );
 };
 
