@@ -4,10 +4,9 @@ import { Disclosure } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
 
 const navigation = [
-  { name: 'Dashboard', href: '#', current: true },
+  { name: 'Home', href: '#', current: true },
+  { name: 'About', href: '#', current: false },
   { name: 'Team', href: '#', current: false },
-  { name: 'Projects', href: '#', current: false },
-  { name: 'Calendar', href: '#', current: false },
 ]
 
 function classNames(...classes) {
@@ -35,16 +34,11 @@ export default function Navbar() {
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex-shrink-0 flex items-center">
                   <img
-                    className="block lg:hidden h-8 w-auto"
+                    className="block h-8 w-auto"
                     src="https://img.icons8.com/nolan/64/path.png"
                     alt="Workflow"
                   />
-                  <img
-                    className="hidden lg:block h-8 w-auto"
-                    src="https://img.icons8.com/nolan/64/path.png"
-                    alt="Workflow"
-                  />
-                  <p className="ml-2 text-2xl text-white font-semibold">Pathfinder</p>
+                  <p className="hidden sm:block ml-2 text-xl text-white font-semibold">Pathfinder</p>
                 </div>
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">
