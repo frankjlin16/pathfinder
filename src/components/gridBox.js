@@ -11,7 +11,7 @@ const GridBox = () => {
         className="grid gap-2 grid-cols-12 p-4 bg-white rounded-md"
       >
         {gridMatrix.map((grid) => (
-          <Grid grid={grid} />
+          <Grid grid={grid} onclick={handleClick}/>
         ))}
         {/* TODO: Construct a single reactive grid component.
 				The single reactive grid component need to hold "id" and "node type". 
@@ -30,5 +30,9 @@ const createGrid = () => {
   }
   return grids;
 };
+
+const handleClick = () => {
+  alert("Click!");
+}
 
 export default GridBox;
