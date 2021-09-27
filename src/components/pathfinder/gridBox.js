@@ -1,27 +1,36 @@
 import React, { useState } from "react";
-import Grid from "./node";
+import Node from "./node";
 
 const rows = 15;
 
 const GridBox = () => {
-  const [gridMatrix, setGridMatrix] = useState(createGrid());
+  const [grid, setGrid] = useState(createGrid());
 
   // Handle click events on a single grid element
   // Updates grid type
-  const handleClick = (id) => {
-    const grids = [...gridMatrix];
-    grids[id].type = !gridMatrix[id].type;
-    setGridMatrix(grids);
+  const handleClick = (row, column) => {
+    const newGrid = [...grid];
+    newGrid[row][column].isWall = !grid[row][column].isWall;
+    setGrid(newGrid);
   };
 
   return (
     <div className="px-5 py-7 bg-gray-800">
-      <div
-        id="grid"
-        className="grid gap-1 auto-cols-max p-4 bg-white rounded-md"
-      >
-        {gridMatrix.map((grid) => (
-          <Grid key={grid.id} grid={grid} onclick={handleClick} />
+      <div className="grid p-4 bg-white rounded-md">
+        {grid.map((row, rowIndex) => (
+          <div key={rowIndex}>
+            {row.map((node, nodeIndex) => (
+              <Node
+                key={nodeIndex}
+                row={node.row}
+                column={node.column}
+                isStart={node.isStart}
+                isFinish={node.isFinish}
+                isWall={node.isWall}
+                onclick={handleClick}
+              />
+            ))}
+          </div>
         ))}
       </div>
     </div>
@@ -32,7 +41,7 @@ const GridBox = () => {
 const createGrid = () => {
   var grid = [];
   for (let row = 0; row < rows; row++) {
-    const currentRow= [];
+    const currentRow = [];
     for (let column = 0; column < 20; column++) {
       currentRow.push(createNode(row, column));
     }
@@ -44,15 +53,15 @@ const createGrid = () => {
 // Create individual nodes
 const createNode = (row, column) => {
   return {
-    row, 
-    column, 
+    row,
+    column,
     isStart: null,
     isFinish: null,
     isWall: false,
     isVisited: false,
     distance: Infinity,
     previousNode: null,
-  }
-}
+  };
+};
 
 export default GridBox;
