@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Node from "./node";
 
+// TODO: Ability to add/remove nodes on each row based on window size
+
 const rows = 15;
 
 const GridBox = () => {
