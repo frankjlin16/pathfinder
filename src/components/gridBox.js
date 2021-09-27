@@ -1,61 +1,15 @@
 import React, { useState } from "react";
-import Grid from "./grid"
+import Grid from "./grid";
 
 const GridBox = () => {
-  const [gridMatrix, setGridMatrix] = useState([
-    { id: 1 },
-    { id: 2 },
-    { id: 3 },
-    { id: 4 },
-    { id: 5 },
-    { id: 6 },
-    { id: 7 },
-    { id: 8 },
-    { id: 9 },
-    { id: 10 },
-    { id: 11 },
-    { id: 12 },
-    { id: 13 },
-    { id: 14 },
-    { id: 15 },
-    { id: 16 },
-    { id: 17 },
-    { id: 18 },
-    { id: 19 },
-    { id: 20 },
-    { id: 21 },
-    { id: 22 },
-    { id: 23 },
-    { id: 24 },
-    { id: 25 },
-    { id: 26 },
-    { id: 27 },
-    { id: 28 },
-    { id: 29 },
-    { id: 30 },
-    { id: 31 },
-    { id: 32 },
-    { id: 33 },
-    { id: 34 },
-    { id: 35 },
-    { id: 36 },
-    { id: 37 },
-    { id: 38 },
-    { id: 39 },
-    { id: 40 },
-    { id: 41 },
-    { id: 42 },
-    { id: 43 },
-    { id: 44 },
-    { id: 45 },
-    { id: 46 },
-    { id: 47 },
-    { id: 48 },
-  ]);
+  const [gridMatrix, setGridMatrix] = useState(createGrid());
 
   return (
     <div className="px-5 py-7 bg-gray-800">
-      <div id="grid" className="grid gap-2 grid-cols-12 p-4 bg-white rounded-md">
+      <div
+        id="grid"
+        className="grid gap-2 grid-cols-12 p-4 bg-white rounded-md"
+      >
         {gridMatrix.map((grid) => (
           <Grid grid={grid} />
         ))}
@@ -66,6 +20,15 @@ const GridBox = () => {
       </div>
     </div>
   );
+};
+
+// Creates a grid matrix with 48 individual grids
+const createGrid = () => {
+  var grids = [];
+  for (let i = 1; i <= 48; i++) {
+    grids.push({ id: i, type: null });
+  }
+  return grids;
 };
 
 export default GridBox;
