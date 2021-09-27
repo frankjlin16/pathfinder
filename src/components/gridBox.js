@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Grid from "./grid"
 
 const GridBox = () => {
   const [gridMatrix, setGridMatrix] = useState([
@@ -56,12 +57,7 @@ const GridBox = () => {
     <div className="px-5 py-7 bg-gray-800">
       <div id="grid" className="grid gap-2 grid-cols-12 p-4 bg-white rounded-md">
         {gridMatrix.map((grid) => (
-          <div
-            key={grid.id}
-            className="bg-purple-400 bg-opacity-50 h-12 w-12"
-          >
-            <p className="text-center">{grid.id}</p>
-          </div>
+          <Grid grid={grid} />
         ))}
         {/* TODO: Construct a single reactive grid component.
 				The single reactive grid component need to hold "id" and "node type". 
