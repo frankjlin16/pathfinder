@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Hero from "./hero";
-import GridBox from "./gridBox"
+import GridBox from "./pathfinder/gridBox"
 
 const Home = () => {
   return (

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Grid from "./grid";
+import Grid from "./node";
 
 const GridBox = () => {
   const [gridMatrix, setGridMatrix] = useState(createGrid());
@@ -16,7 +16,7 @@ const GridBox = () => {
     <div className="px-5 py-7 bg-gray-800">
       <div
         id="grid"
-        className="grid gap-1 grid-cols-12 p-4 bg-white rounded-md"
+        className="grid gap-1 auto-cols-max p-4 bg-white rounded-md"
       >
         {gridMatrix.map((grid) => (
           <Grid key={grid.id} grid={grid} onclick={handleClick} />
