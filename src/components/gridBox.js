@@ -4,19 +4,23 @@ import Grid from "./grid";
 const GridBox = () => {
   const [gridMatrix, setGridMatrix] = useState(createGrid());
 
+  // Handle click events on a single grid element
+  // Updates grid type
+  const handleClick = (id) => {
+    const grids = [...gridMatrix];
+    grids[id].type = !gridMatrix[id].type;
+    setGridMatrix(grids);
+  };
+
   return (
     <div className="px-5 py-7 bg-gray-800">
       <div
         id="grid"
-        className="grid gap-2 grid-cols-12 p-4 bg-white rounded-md"
+        className="grid gap-1 grid-cols-12 p-4 bg-white rounded-md"
       >
         {gridMatrix.map((grid) => (
-          <Grid grid={grid} onclick={handleClick}/>
+          <Grid key={grid.id} grid={grid} onclick={handleClick} />
         ))}
-        {/* TODO: Construct a single reactive grid component.
-				The single reactive grid component need to hold "id" and "node type". 
-				In addition, the component need to update its state on click.
-         */}
       </div>
     </div>
   );
@@ -25,14 +29,10 @@ const GridBox = () => {
 // Creates a grid matrix with 48 individual grids
 const createGrid = () => {
   var grids = [];
-  for (let i = 1; i <= 48; i++) {
-    grids.push({ id: i, type: null });
+  for (let i = 0; i < 48; i++) {
+    grids.push({ id: i, type: false });
   }
   return grids;
 };
-
-const handleClick = () => {
-  alert("Click!");
-}
 
 export default GridBox;
