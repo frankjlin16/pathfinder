@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
-const Grid = (props) => {
-  var { key, isWall, row, column} = props;
-  var className = "bg-opacity-50 h-7 w-7";
+const Node = (props) => {
+  var {isWall, row, column} = props;
+  var className = "bg-opacity-50 h-7 w-7 m-0.5";
 
   //Chanage grid class property based on grid type
   if (!isWall) {
@@ -12,9 +12,9 @@ const Grid = (props) => {
   }
 
   return (
-    <div id={key} onClick={() => props.onclick(row, column)} className={className}>
+    <div id={`node-${row}-${column}`} onClick={() => props.onclick(row, column)} className={className}>
     </div>
   );
 };
 
-export default Grid;
+export default Node;
